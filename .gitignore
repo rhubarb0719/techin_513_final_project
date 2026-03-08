@@ -1,0 +1,8 @@
+# Exclude the Data folder (large dataset, 1.3GB)
+Data/
+
+# Exclude all WAV audio files
+*.wav
+
+# macOS
+.DS_Store
