@@ -1,10 +1,10 @@
 """
 Team 18 — Music Energy Visualization
 Visual mapping:
-  rectangles  ← RMS              : 8列，高度随响度脉冲，有波浪相位差
-  stars       ← spectral_flux    : 5~60颗，数量+大小随频谱变化，有闪烁
-  particles   ← energy_label     : Low=15慢, Medium=40中, High=90快
-  color       ← spectral_centroid: 全部元素同步冷暖变化
+rectangles  ← RMS              : 8 columns, with heights pulsing to loudness and wave-like phase offsets
+stars       ← spectral_flux    : 5–60 stars, with count and size changing with the spectrum, plus flicker
+particles   ← energy_label     : Low = 15 (slow), Medium = 40 (moderate), High = 90 (fast)
+color       ← spectral_centroid: all elements shift between cool and warm tones in sync
 
 Usage:
   python music_viz_final.py
