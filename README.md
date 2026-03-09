@@ -1,27 +1,60 @@
-# Music-to-Imagine System (Team 18)
+# Environment Setup
 
-ML-based music visual tool. The project is split into two branches:
-
-| Branch | Content |
-|--------|--------|
-| **`analysis`** | DSP feature extraction + SVM energy classification (Low/Medium/High) |
-| **`visual`** | Visual output mapping (待开发) |
+## Requirements
+- Python 3.11 (required — librosa is not compatible with Python 3.13)
+- Anaconda
 
 ---
 
-## Analysis branch (`analysis`)
+## Step 1: Create Conda Environment
 
-A music energy classification system that extracts DSP features from audio and uses SVM to classify songs into **Low** / **Medium** / **High** energy states.
+```bash
+conda create -n techin513 python=3.11
+conda activate techin513
+```
 
-- **Tech stack:** Python, librosa, scikit-learn, matplotlib, pandas  
-- **Dataset:** [GTZAN](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) (not included; download from Kaggle).  
-- **How to run:**  
-  1. `git checkout analysis`  
-  2. `pip install librosa scikit-learn matplotlib pandas`  
-  3. Open `513Final.ipynb` and run all cells.
+## Step 2: Install Dependencies
+
+```bash
+conda install -c conda-forge librosa
+pip install pandas scikit-learn matplotlib
+```
+
+## Step 3: Verify Installation
+
+```bash
+python -c "import librosa, pandas, sklearn, matplotlib; print('All good ✅')"
+```
 
 ---
 
-## Visual branch (`visual`)
+## Step 4: Open Notebook in VS Code
 
-Visualization of classification results — 视觉部分由队友开发中。
+1. Open VS Code
+2. Open the `Code/` folder
+3. Click the kernel selector (top right of notebook)
+4. Select **techin513**
+
+---
+
+## Project Structure
+
+```
+TECHIN_513_FINAL_PROJECT/
+├── Code/
+│   ├── Analysis module.ipynb    ← feature extraction + ML
+│   └── ablation_study.ipynb     ← ablation study
+├── Data/
+│   ├── genres_original/         ← GTZAN audio files
+│   └── features.csv             ← pre-extracted features (use this directly)
+├── Documents/
+└── README.md
+```
+
+---
+
+## Notes
+
+- `features.csv` is already generated — **no need to re-run Cell 7** (batch processing takes 15–30 min)
+- Start from **Cell 9** (energy label + ML) when demoing
+- Visual module: run `music_viz_final.py` separately with `python music_viz_final.py`
